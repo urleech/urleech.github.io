@@ -1,0 +1,54 @@
+<head>
+  <title>
+    {% if page.title == "Home" %}
+      {{ site.title }} | {{ site.description }}
+    {% else %}
+      {{ page.title }} | {{ site.title }}
+    {% endif %}
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="description" content="{{ site.description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ site.title }}">
+  <meta property="og:url" content="{{ site.baseurl }}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:description" content="{{ site.description }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ TitleContent }}">
+  <meta name="twitter:description" content="{{ HeadDesc | html | truncate(50) }}">
+  <meta name="p:domain_verify" content="e23f0c1b03aa477f9ce2221435b93f5f"/>
+  <link rel="alternative" href="{{ site.baseurl }}/feed.xml" title="{{ site.title }}" type="application/feed+xml">
+  <link rel="short icon" href="{{ site.github.url }}/assets/img/res/favicon.png">
+  <link rel="icon" type="image/png" href="{{ site.github.url }}/assets/img/res/favicon.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.github.url }}/assets/img/res/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ site.github.url }}/assets/img/res/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site.github.url }}/assets/img/res/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="{{ site.github.url }}/assets/img/res/apple-touch-icon-57-precomposed.png">
+  <link rel="stylesheet" href="{{ site.github.url }}/assets/css/main.css">
+  <link rel="stylesheet" href="{{ site.github.url }}/assets/css/syntax.css">
+  <!-- Use Atom -->
+  {% feed_meta %}
+  <!-- Use RSS-2.0 -->
+  <!--<link href="{{ site.github.url }}/rss-feed.xml" type="application/rss+xml" rel="alternate" title="{{ site.title }} | {{ site.description }}"/>
+  //-->
+  <link href="https://cdn.rawgit.com/rastikerdar/vazir-font/v19.0.0/dist/font-face.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link href="https://file.myfontastic.com/QoRgSbzTApabdSyVcu8Ccj/icons.css" rel="stylesheet">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  <script type="text/javascript" async
+    src="{{ site.github.url }}/assets/js/moment.js">
+  </script>
+  <script type="text/javascript" async
+    src="{{ site.github.url }}/assets/js/moment-jalaali.js">
+  </script>
+  <!-- Google Analytics -->
+  {% include google-analytics.html %}
+
+  <!-- Use Jekyll SEO plugin -->
+  {% seo %}
+
+</head>

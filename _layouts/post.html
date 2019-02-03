@@ -1,0 +1,74 @@
+---
+layout: default
+---
+<div class="progress"></div>
+<script>var h = document.documentElement,
+  b = document.body,
+  st = 'scrollTop',
+  sh = 'scrollHeight',
+  progress = document.querySelector('.progress'),
+  scroll;
+
+document.addEventListener('scroll', function() {
+  scroll = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+  progress.style.setProperty('--scroll', scroll + '%');
+});</script>
+<h1>
+  {{ page.title }}
+</h1>
+<span class="post-date">  {{ site.data.settings.post_date_prefix }}
+<time id="date"></time><script>
+    var date = '{{ page.date  }}'
+    moment.loadPersian(true);
+    var jalaliDate = moment(date, 'YYYY-M-D HH:mm:ss TZD').format('ddd jD jMMMM jYYYY');
+    document.getElementById("date").innerText = jalaliDate
+</script></time>
+  توسط
+  {% if page.author %}
+    {{ page.author }}
+  {% else %}
+    {{ site.author }}
+  {% endif %}</span>
+
+<!-- <span class="post-date">
+  {{ site.data.settings.post_date_prefix }}
+  {% assign d = page.date | date: "%-d"  %}
+  {{ page.date | date: "%B" }}
+  {% case d %}
+    {% when '1' or '21' or '31' %}{{ d }}st
+    {% when '2' or '22' %}{{ d }}nd
+    {% when '3' or '23' %}{{ d }}rd
+    {% else %}{{ d }}th{% endcase %},
+  {{ page.date | date: "%Y" }}
+  توسط
+  {% if page.author %}
+    {{ page.author }}
+  {% else %}
+    {{ site.author }}
+  {% endif %}
+</span> -->
+<div class="post-tags">
+            <span>تگ ها:</span>
+            {% for tag in page.tags %}
+            <a href="{{site.baseurl}}/tags#{{tag}}" class="tag"> {{ tag }},</a>
+            {% endfor %}
+</div><!-- End Tags -->
+{% if page.image %}
+  <img src="{{ site.github.url }}/assets/img/post/thumbnail/{{ page.image }}">
+{% endif %}
+
+{{ content }}
+
+{% include social-sharing.html %}
+
+{% if page.previous.url %}
+<span class="post-button-prev"><a href="{{page.previous.url}}"><i class="fas fa-arrow-right"></i> {{page.previous.title}}</a></span>
+{% endif %}
+{% if page.next.url %}
+<span class="post-button-next"><a href="{{page.next.url}}">{{page.next.title}} <i class="fas fa-arrow-left"></i></a></span>
+{% endif %}
+</br></br>
+{% include related-posts.html %}
+{% if site.data.settings.disqus.comments %}
+  {% include disqus.html %}
+{% endif %}

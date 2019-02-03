@@ -1,0 +1,32 @@
+# Change to true for Disqus comments
+disqus:
+  comments: true
+  disqus_shortname: 'kaubosh'
+
+google-ID: 'UA-114152659-1'
+
+menu:
+- {name: 'آرشیو', path: '.', url: 'archive'}
+- {name: 'تگ ها', path: '.', url: 'tags'}
+- {name: 'درباره', path: '.', url: 'about'}
+
+# Available social icons are powered by Font Awesome, so you can use any icon that they offer
+social:
+- {icon: 'telegram', link: 'https://www.t.me/kaubosh'}
+- {icon: 'instagram', link: 'https://www.instagram.com/kaubosh'}
+- {icon: 'twitter', link: 'https://www.twitter.com/kaubosh'}
+- {icon: 'envelope', link: 'mailto:kaubosh@gmail.com'}
+- {icon: 'rss-square', link: '/feed.xml'}
+- {icon: 'language', link: '/en'}
+# - {icon: 'rss-square', link: '/rss-feed.xml'}
+
+# Customize site text
+pagination:
+  next_page: 'مطالب جدیدتر'
+  previous_page: 'مطالب قدیمی تر'
+
+sharing_button_prompt: 'به اشتراک بذار:'
+
+related_posts: 'مطالب مرتبط:'
+
+post_date_prefix: 'نوشته شده در'

@@ -1,0 +1,21 @@
+{% if post.layout != post %}
+  {% assign words = post.content | strip_html | number_of_words %}
+  {% if words < 150 %}
+    کمتر از 1 دقیقه مطالعه
+  {% elsif words < 330 %}
+    مطالعه 1 دقیقه ای
+  {% else %}
+   مطالعه {{ words | divided_by:150 }} دقیقه ای
+  {% endif %}
+{% endif %}
+
+{% if post.layout == post %}
+  {% assign words = content | number_of_words %}
+  {% if words < 150 %}
+    کمتر از 1 دقیقه مطالعه
+  {% elsif words < 330 %}
+    مطالعه 1 دقیقه ای
+  {% else %}
+   مطالعه {{ words | divided_by:150 }} دقیقه ای
+  {% endif %}
+{% endif %}

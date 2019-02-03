@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fa">
+{% include head.html %}
+<body>
+
+<script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  scrollDuration: 1000
+})</script>
+  <div class="container">
+    {% include header.html %}
+    <div class="post-container">
+      {{ content }}
+    </div>
+    {% include footer.html %}
+  </div>
+  <script src="{{site.baseurl}}/assets/js/jekyll-search.js"></script>
+<script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '{{site.baseurl}}/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+    noResultsText: 'No results found',
+    fuzzy: false,
+    exclude: ['Welcome']
+  });
+</script>
+</body>
+</html>
