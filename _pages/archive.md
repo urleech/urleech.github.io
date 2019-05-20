@@ -1,8 +1,9 @@
 ---
-layout: page
 title: آرشیو
-permalink: /archive/
+permalink: "/archive/"
+layout: page
 ---
+
 <ul class="posts">
   {% for post in site.posts %}
 
