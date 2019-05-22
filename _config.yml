@@ -8,6 +8,9 @@ collections:
   uploads:
     title: Uploads
     output: true
+  people:
+    title: people
+    output: true
 email: KauBosh@gmail.com
 description: شیفته ی شیفتگی
 paginate: 5
