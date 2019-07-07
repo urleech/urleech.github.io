@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-
 <div class="progress"></div>
 <script>var h = document.documentElement,
   b = document.body,
@@ -17,39 +16,29 @@ document.addEventListener('scroll', function() {
 <h1>
   {{ page.title }}
 </h1>
-<span class="post-date">  {{ site.data.settings.post_date_prefix }}
+<span class="post-authors">
+	<i class="fas fa-user-astronaut"></i>
+	{{ site.data.settings.authors }}
+            {% for author in page.author %}
+            <a href="{{site.baseurl}}/authors#{{author}}" class="author"> {{ author }},</a>
+            {% endfor %}
+			{% assign author = site.authors | where: 'title', page.author | first %}
+{% if author %}
+  <a href="{{ author.url }}">{{ author.title }}</a>
+{% endif %}
+			</span>
+	
+<span class="post-date">
+  <i class="fas fa-calendar-alt"></i> {{ site.data.settings.post_date_prefix }}
 <time id="date"></time><script>
     var date = '{{ page.date  }}'
     moment.loadPersian(true);
     var jalaliDate = moment(date, 'YYYY-M-D HH:mm:ss TZD').format('ddd jD jMMMM jYYYY');
     document.getElementById("date").innerText = jalaliDate
-</script></time>
-  توسط
-  {% if page.author %}
-    {{ page.author }}
-  {% else %}
-    {{ site.author }}
-  {% endif %}</span>
+</script></time></span>
 
-<!-- <span class="post-date">
-  {{ site.data.settings.post_date_prefix }}
-  {% assign d = page.date | date: "%-d"  %}
-  {{ page.date | date: "%B" }}
-  {% case d %}
-    {% when '1' or '21' or '31' %}{{ d }}st
-    {% when '2' or '22' %}{{ d }}nd
-    {% when '3' or '23' %}{{ d }}rd
-    {% else %}{{ d }}th{% endcase %},
-  {{ page.date | date: "%Y" }}
-  توسط
-  {% if page.author %}
-    {{ page.author }}
-  {% else %}
-    {{ site.author }}
-  {% endif %}
-</span> -->
 <div class="post-tags">
-            <span>تگ ها:</span>
+            <span><i class="fas fa-tags"></i> {{ site.data.settings.tags }}</span>
             {% for tag in page.tags %}
             <a href="{{site.baseurl}}/tags#{{tag}}" class="tag"> {{ tag }},</a>
             {% endfor %}
@@ -70,6 +59,27 @@ document.addEventListener('scroll', function() {
 {% endif %}
 </br></br>
 {% include related-posts.html %}
-{% if site.data.settings.disqus.comments %}
+<div id="graphcomment"></div>
+<script type="text/javascript">
+
+  /* - - - CONFIGURATION VARIABLES - - - */
+
+  // make sure the id is yours
+  window.gc_params = {
+    graphcomment_id: 'Kau-Bosh',
+
+    // if your website has a fixed header, indicate it's height in pixels
+    fixed_header_height: 0,
+  };
+
+  /* - - - DON'T EDIT BELOW THIS LINE - - - */
+
+  (function() {
+    var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
+    gc.src = 'https://graphcomment.com/js/integration.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
+  })();
+</script>
+<!--{% if site.data.settings.disqus.comments %}
   {% include disqus.html %}
-{% endif %}
+{% endif %}-->

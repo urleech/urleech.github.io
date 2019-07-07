@@ -9,6 +9,7 @@ menu:
 - {name: 'آرشیو', path: '.', url: 'archive'}
 - {name: 'تگ ها', path: '.', url: 'tags'}
 - {name: 'درباره', path: '.', url: 'about'}
+- {name: 'حمایت مالی', url: 'idpay.ir/kaubosh'}
 
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
 social:
@@ -29,4 +30,10 @@ sharing_button_prompt: 'به اشتراک بذار:'
 
 related_posts: 'مطالب مرتبط:'
 
-post_date_prefix: 'نوشته شده در'
+tags: 'تگ ها:'
+
+comments: 'دیدگاه ها:'
+
+post_date_prefix: 'در تاریخ:'
+
+authors: 'نوشته شده توسط:'
