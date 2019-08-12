@@ -1,7 +1,7 @@
 ---
-layout: default
 title: کاوبوش
-permalink: /kaubosh/
+permalink: "/kaubosh/"
+layout: default
 ---
 
 dvfd

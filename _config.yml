@@ -1,58 +1,36 @@
-# Site Build Settings
-
+---
 title: کاوبوش
-email: KauBosh@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-  permalink: ':title/'
-  baseurl: "" # the subpath of your site, e.g. /blog
-  url: "" # the base hostname & protocol for your site, e.g. http://example.com
-  
-# Jekyll-paginate-v2 configuration
-#  pagination:
-#   enabled: true
-#   per_page: 5
-#   permalink: '/page/:num/'
-#   title: ':title - page :num of :max'
-#   limit: 0
-#   sort_field: 'date'
-#   sort_reverse: true
-
-# jekyll-paginate configuration
-paginate:            5
-
-# Build settings
-markdown:            kramdown
-highlighter:         rouge
-permalink:           none
-plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
-
-# Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
-title:		           'کاوبوش'
-description:	       'شیفته ی شیفتگی'
-author:              'کاوبوش'
-
-# Authors details.
-
+timezone: UTC
 collections:
   authors:
     title: Authors
     output: true
-
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
 defaults:
 - scope:
     path: ''
     type: authors
   values:
-    permalink: "authors/:title/"
+    permalink: authors/:title/
     layout: default
     twitter: 
-
-
-# RSS 2.0 can be used instead of Atom by uncommenting following two lines
-#feed:
-#  path: rss-feed.xml
-
-include: [_pages, _authors]
+email: KauBosh@gmail.com
+description: شیفته ی شیفتگی
+paginate: 5
+markdown: kramdown
+highlighter: rouge
+permalink: none
+plugins:
+- jekyll-paginate
+- jekyll-sitemap
+- jekyll-feed
+- jekyll-seo-tag
+author: کاوبوش
+include:
+- _pages
+- _authors

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: لوسی
-permalink: /luciferblaze/
+permalink: "/luciferblaze/"
+layout: default
 ---
 
 vfef

@@ -1,8 +1,9 @@
 ---
-layout: page
 title: درباره
-permalink: /about/
+permalink: "/about/"
+layout: page
 ---
+
 <head>
 <style>
 h1 {

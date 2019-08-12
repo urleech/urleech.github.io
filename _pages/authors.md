@@ -1,7 +1,7 @@
 ---
-layout: default
 title: نویسندها
-permalink: /authors/
+permalink: "/authors/"
+layout: default
 ---
 
 <ul>
